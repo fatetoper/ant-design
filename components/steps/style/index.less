@@ -20,19 +20,13 @@
 @error-tail-color: @wait-tail-color;
 @steps-nav-active-color: @primary-color;
 
-@steps-icon-size: 32px;
-@steps-small-icon-size: 24px;
-@steps-dot-size: 8px;
-@steps-current-dot-size: 10px;
-@steps-desciption-max-width: 140px;
-@steps-nav-content-max-width: auto;
-
 .@{steps-prefix-cls} {
   .reset-component;
 
   display: flex;
   width: 100%;
   font-size: 0;
+  text-align: initial;
 }
 
 .@{steps-prefix-cls}-item {
@@ -64,8 +58,8 @@
   &-icon {
     width: @steps-icon-size;
     height: @steps-icon-size;
-    margin-right: 8px;
-    font-size: @font-size-lg;
+    margin: @steps-icon-margin;
+    font-size: @steps-icon-font-size;
     font-family: @font-family;
     line-height: @steps-icon-size;
     text-align: center;
@@ -73,9 +67,9 @@
     border-radius: @steps-icon-size;
     transition: background-color 0.3s, border-color 0.3s;
 
-    > .@{steps-prefix-cls}-icon {
+    .@{steps-prefix-cls}-icon {
       position: relative;
-      top: -1px;
+      top: @steps-icon-top;
       color: @primary-color;
       line-height: 1;
     }
@@ -103,11 +97,11 @@
     padding-right: 16px;
     color: @text-color;
     font-size: @font-size-lg;
-    line-height: @steps-icon-size;
+    line-height: @steps-title-line-height;
 
     &::after {
       position: absolute;
-      top: @steps-icon-size / 2;
+      top: @steps-title-line-height / 2;
       left: 100%;
       display: block;
       width: 9999px;
@@ -131,7 +125,7 @@
   .step-item-status(process);
   &-process &-icon {
     background: @process-icon-color;
-    > .@{steps-prefix-cls}-icon {
+    .@{steps-prefix-cls}-icon {
       color: @process-icon-text-color;
     }
   }
@@ -144,6 +138,10 @@
   &.@{steps-prefix-cls}-next-error .@{steps-prefix-cls}-item-title::after {
     background: @error-icon-color;
   }
+
+  &-disabled {
+    cursor: not-allowed;
+  }
 }
 
 // ===================== Clickable =====================
@@ -154,6 +152,7 @@
 
       .@{steps-prefix-cls}-item {
         &-title,
+        &-subtitle,
         &-description,
         &-icon .@{steps-prefix-cls}-icon {
           transition: color 0.3s;
@@ -189,11 +188,11 @@
 
 .@{steps-prefix-cls}-horizontal:not(.@{steps-prefix-cls}-label-vertical) {
   .@{steps-prefix-cls}-item {
-    margin-right: 16px;
+    padding-left: 16px;
     white-space: nowrap;
 
-    &:last-child {
-      margin-right: 0;
+    &:first-child {
+      padding-left: 0;
     }
     &:last-child .@{steps-prefix-cls}-item-title {
       padding-right: 0;
@@ -244,3 +243,4 @@
 @import 'progress-dot';
 @import 'nav';
 @import './rtl';
+@import './progress.less';

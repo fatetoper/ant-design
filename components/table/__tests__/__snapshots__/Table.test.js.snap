@@ -22,12 +22,10 @@ exports[`Table renders JSX correctly 1`] = `
             <table
               style="table-layout: auto;"
             >
-              <colgroup>
-                <col />
-                <col />
-                <col />
-              </colgroup>
-              <thead>
+              <colgroup />
+              <thead
+                class="ant-table-thead"
+              >
                 <tr>
                   <th
                     class="ant-table-cell"
@@ -119,7 +117,7 @@ exports[`Table rtl render component should be rendered correctly in RTL directio
       class="ant-spin-container"
     >
       <div
-        class="ant-table ant-table-rtl"
+        class="ant-table ant-table-empty ant-table-rtl"
       >
         <div
           class="ant-table-container"
@@ -130,10 +128,10 @@ exports[`Table rtl render component should be rendered correctly in RTL directio
             <table
               style="table-layout:auto"
             >
-              <colgroup>
-                <col />
-              </colgroup>
-              <thead>
+              <colgroup />
+              <thead
+                class="ant-table-thead"
+              >
                 <tr>
                   <th
                     class="ant-table-cell"

@@ -13,7 +13,7 @@ title:
 
 ## en-US
 
-Input.Group example
+Input.Group example.
 
 Note: You don't need `Col` to control the width in the `compact` mode.
 
@@ -84,8 +84,13 @@ const App = () => (
     </Input.Group>
     <br />
     <Input.Group compact>
-      <Input style={{ width: '20%' }} defaultValue="0571" />
-      <Input.Search style={{ width: '30%' }} defaultValue="26888888" />
+      <Input.Search style={{ width: '40%' }} defaultValue="0571" />
+      <Input.Search allowClear style={{ width: '40%' }} defaultValue="26888888" />
+    </Input.Group>
+    <br />
+    <Input.Group compact>
+      <Input.Search allowClear style={{ width: '40%' }} defaultValue="0571" />
+      <Input.Search allowClear style={{ width: '40%' }} defaultValue="26888888" />
     </Input.Group>
     <br />
     <Input.Group compact>
@@ -100,6 +105,11 @@ const App = () => (
     <Input.Group compact>
       <Input style={{ width: '50%' }} defaultValue="input content" />
       <DatePicker style={{ width: '50%' }} />
+    </Input.Group>
+    <br />
+    <Input.Group compact>
+      <Input style={{ width: '30%' }} defaultValue="input content" />
+      <DatePicker.RangePicker style={{ width: '70%' }} />
     </Input.Group>
     <br />
     <Input.Group compact>
@@ -174,8 +184,18 @@ ReactDOM.render(<App />, mountNode);
   border-left-width: 0;
 }
 
-.site-input-group-wrapper .site-input-right:hover {
+.site-input-group-wrapper .site-input-right:hover,
+.site-input-group-wrapper .site-input-right:focus {
   border-left-width: 1px;
+}
+
+.site-input-group-wrapper .ant-input-rtl.site-input-right {
+  border-right-width: 0;
+}
+
+.site-input-group-wrapper .ant-input-rtl.site-input-right:hover,
+.site-input-group-wrapper .ant-input-rtl.site-input-right:focus {
+  border-right-width: 1px;
 }
 ```
 

@@ -66,7 +66,11 @@ export { default as Empty } from './empty';
 
 export { default as Form } from './form';
 
+export { default as Grid } from './grid';
+
 export { default as Input } from './input';
+
+export { default as Image } from './image';
 
 export { default as InputNumber } from './input-number';
 
@@ -109,6 +113,8 @@ export { default as Select } from './select';
 export { default as Skeleton } from './skeleton';
 
 export { default as Slider } from './slider';
+
+export { default as Space } from './space';
 
 export { default as Spin } from './spin';
 
